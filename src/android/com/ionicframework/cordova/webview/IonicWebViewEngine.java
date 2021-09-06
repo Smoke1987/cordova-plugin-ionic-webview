@@ -72,6 +72,7 @@ public class IonicWebViewEngine extends SystemWebViewEngine {
     super.init(parentWebView, cordova, client, resourceApi, pluginManager, nativeToJsMessageQueue);
     if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
       final WebSettings settings = webView.getSettings();
+      settings.setAllowFileAccess(true);
       int mode = preferences.getInteger("MixedContentMode", 0);
       settings.setMixedContentMode(mode);
     }
